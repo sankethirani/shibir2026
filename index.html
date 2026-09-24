@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Swami schedule · Shibir 2026</title>
+<style>
+:root{--bg:#F1F3FA;--sf:#fff;--ink:#181B38;--mut:#565C7A;--ln:#DADFEE;--ad:#3A3F9C;--adbg:#E6E8FA;--kd:#8A5600;--kdbg:#FFF1CC;--kb:#E0A100;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101220;--sf:#1A1D30;--ink:#ECEEF9;--mut:#A3A9C6;--ln:#2C3050;--ad:#AEB4FF;--adbg:#26295A;--kd:#F2B84B;--kdbg:#3A2C0A;--kb:#F2B84B}}
+:root[data-theme="dark"]{--bg:#101220;--sf:#1A1D30;--ink:#ECEEF9;--mut:#A3A9C6;--ln:#2C3050;--ad:#AEB4FF;--adbg:#26295A;--kd:#F2B84B;--kdbg:#3A2C0A;--kb:#F2B84B}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45}
+.wrap{max-width:920px;margin:0 auto;padding:1.6rem 1rem 3rem}
+h1{font-size:clamp(2rem,7vw,3.3rem);line-height:1.02;letter-spacing:-.025em;font-weight:750;margin:0 0 .5rem}
+.sub{color:var(--mut);margin:0 0 1.4rem;font-size:1.02rem}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:.5rem 0 .7rem}
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--ad);outline-offset:2px}
+.day{border:1.5px solid var(--ln);background:var(--sf);border-radius:12px;padding:.6rem .3rem;text-align:center;font-weight:650;line-height:1.15}
+.day small{display:block;font-weight:500;color:var(--mut);font-size:.78rem;margin-top:.15rem}
+.day[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.day[aria-pressed=true] small{color:inherit;opacity:.8}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;margin:.7rem 0 0}
+.seg{display:inline-flex;border:1.5px solid var(--ln);border-radius:999px;background:var(--sf);padding:2px}
+.seg button{border:0;background:none;padding:.35rem .85rem;border-radius:999px;font-size:.92rem;font-weight:550}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;gap:.4rem;overflow-x:auto;padding:.1rem .1rem .3rem;margin-top:.55rem;-webkit-overflow-scrolling:touch}
+.chip{flex:none;border:1.5px solid var(--ln);background:var(--sf);border-radius:999px;padding:.3rem .8rem;font-size:.9rem;font-weight:550;display:flex;align-items:center;gap:.4rem}
+.chip i{width:.7rem;height:.7rem;border-radius:50%;background:var(--c,var(--mut))}
+.chip[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.legend{font-size:.82rem;color:var(--mut);margin:.2rem 0 0}
+ol{list-style:none;margin:.6rem 0 0;padding:0;background:var(--sf);border:1px solid var(--ln);border-radius:16px;overflow:hidden}
+.row{display:grid;grid-template-columns:5rem 1fr;gap:.55rem 1rem;padding:1rem 1rem 1.05rem .9rem;border-left:5px solid var(--rb);border-top:1px solid var(--ln)}
+.row:first-child{border-top:0}
+.row.A{--rb:var(--ad)}.row.K{--rb:var(--kb)}.row.AK{--rb:transparent;border-image:linear-gradient(var(--ad) 50%,var(--kb) 50%) 1}
+.time{font-variant-numeric:tabular-nums;line-height:1.1}
+.time b{font-size:1.65rem;font-weight:720;letter-spacing:-.02em}
+.time b em{font-style:normal;font-size:.8rem;font-weight:600;color:var(--mut);margin-left:.15rem}
+.time span{display:block;color:var(--mut);font-size:.8rem;margin-top:.25rem}
+.time.free b{font-size:1.05rem;letter-spacing:0}
+h3{margin:0;font-size:1.12rem;font-weight:650;line-height:1.25}
+.loc{margin:.25rem 0 0;color:var(--mut);font-size:.92rem;display:flex;align-items:center;gap:.3rem}
+.loc.none{font-style:italic}
+.tag{display:inline-block;font-size:.74rem;font-weight:650;padding:.1rem .5rem;border-radius:999px;margin:.4rem .3rem 0 0}
+.tag.a{background:var(--adbg);color:var(--ad)}.tag.k{background:var(--kdbg);color:var(--kd)}
+.note{margin:.4rem 0 0;font-size:.86rem;color:var(--mut)}
+.who{grid-column:2;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;align-content:flex-start}
+.sw{display:inline-flex;align-items:center;gap:.4rem;background:var(--c);color:#fff;border-radius:999px;padding:.25rem .8rem .25rem .3rem;font-weight:620;font-size:.93rem}
+.sw i{font-style:normal;width:1.35rem;height:1.35rem;border-radius:50%;background:rgba(255,255,255,.25);display:grid;place-items:center;font-size:.78rem}
+.sw.un{background:none;color:var(--mut);border:1.5px dashed var(--mut);padding-left:.8rem}
+.or{color:var(--mut);font-size:.85rem}
+.empty{padding:2rem 1.2rem;text-align:center;color:var(--mut)}
+.empty button{margin-top:.7rem;border:1.5px solid var(--ink);background:none;border-radius:999px;padding:.4rem 1rem;font-weight:600}
+.foot{color:var(--mut);font-size:.8rem;margin-top:1.2rem}
+@media (min-width:760px){.row{grid-template-columns:6rem 1fr minmax(15rem,21rem)}.who{grid-column:3;grid-row:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Swami schedule</h1>
+<p class="sub" id="sub"></p>
+<div class="bar">
+  <div class="days" id="days"></div>
+  <div class="filters"><div class="seg" id="aud" role="group" aria-label="Audience"></div></div>
+  <div class="chips" id="chips" role="group" aria-label="Filter by swami"></div>
+</div>
+<p class="legend">Dashed = a swami is needed but the sheet doesn't say who.</p>
+<ol id="list"></ol>
+<p class="foot">Built from the Adults and Kids Team Minute by Minute sheets. Swami name spellings are standardised. Sessions on Thursday have no swami.</p>
+</div>
+<script>
+var SW={M:['Murlimanohar Swami','#2F5BD3'],V:['Vyasswarup Swami','#0B7A6E'],A:['Aksharmuni Swami','#B8336A'],S:['Santswarup Swami','#9A5A08'],U:['Upmahant Swami','#6B46C1'],N:['Swami · not named'],T:['Santos · not named']};
+var DAYS=[['Fri','Friday','25'],['Sat','Saturday','26'],['Sun','Sunday','27'],['Mon','Monday','28']];
+var PIN='<svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M8 1a5 5 0 0 0-5 5c0 3.6 5 9 5 9s5-5.4 5-9a5 5 0 0 0-5-5Zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/></svg>';
+var MBS="Maharaj's Bal Sabha";
+// day, sort, time, title, location, swami keys (/ = "or"), audience, note
+var D=[
+['Fri',525,'8:30 am|9:30 am','Travel to site (bhajan bhakti)','Bus','N','A',''],
+['Fri',585,'9:45 am|10:45 am','Prabhat Feri + Santo Deep Pragatya','Laxmi Vadi','N','AK','Welcome speech by Swami, then announcements.'],
+['Fri',930,'3:30 pm|4:30 pm','Welcome Video + Presentation 1: The Birth of Ghanshyam',MBS,'M','K','Skip the video; pravachan from Murlimanohar Swami.'],
+['Fri',1020,'5 pm|6 pm','Presentation 1','Darbar Ghat','V','A','Time cell was corrupted in the sheet; read as 5–6 pm (between Welcome Videos and Aarti).'],
+['Fri',1155,'7:15 pm|8:15 pm','Bhajan Clubbing',MBS,'V','K',''],
+['Fri',1245,'8:45 pm|9:45 pm','Words of Wisdom','Laxmi Vadi / Darbar Ghadh','T','A','Samagam with santos at the boys’ campfires.'],
+['Fri',1320,'After 10 pm','Daily debrief with Swami','','N','A',''],
+['Sat',360,'6 am|6:45 am','Pooja with Santos, Boys & Girls (groups)','Dabar Gadh','T','A',''],
+['Sat',390,'6:30 am|7 am','Pooja with Santos, Boys & Girls',MBS,'M/V','K',''],
+['Sat',510,'8:30 am|9:15 am','Presentation 2: Nilkanth Charitra Part 1',MBS,'M','K',''],
+['Sat',525,'8:45 am|10:15 am','Presentation 2','Dabar Gadh','A','A',''],
+['Sat',1440,'After the Raas','Daily debrief with Swami','','N','A',''],
+['Sun',360,'6 am|6:45 am','Pooja with Santos, Boys & Girls','Dabar Gadh / Dorms','T','A',''],
+['Sun',361,'6 am|7 am','Pooja with Santos, Boys & Girls',MBS,'M/V','K',''],
+['Sun',540,'9 am|10:15 am','Presentation 4: Rajopchar',MBS,'V','K',''],
+['Sun',555,'9:15 am|10:15 am','Presentation 3','Dabar Gadh','M','A',''],
+['Sun',960,'4 pm|5 pm','Presentation 5: Rang Utsav',MBS,'M','K',''],
+['Sun',1020,'5 pm|6 pm','Activity 5: Holi',"Dada Khachar's Darba",'MVAS','K',''],
+['Sun',1170,'7:30 pm|8:30 pm','Activity 6: Q&A with Santo',MBS,'MV','K',''],
+['Sun',1200,'8 pm|9:30 pm','Chesta & Conversation with Bhagwan (dhyan, dhun)','Dabar Gadh','N','A','Swami gives the speech and pravachan, and leads kiran dhun, maansi and podhaniya.'],
+['Sun',1440,'After the evening session','Daily debrief with Swami','','N','A',''],
+['Mon',570,'9:30 am|10:45 am','Presentation 6: Kahoot Quiz',MBS,'V','K',''],
+['Mon',571,'9:30 am|11 am','Presentation 4','Dabar Gadh','S','A',''],
+['Mon',795,'1:15 pm|1:45 pm','Conclusion & Santo Ashirvachan (Yuvak Samiti)','Dabar Gadh','U','AK','Kids join the adults for this session.']
+];
+var st={day:'Fri',aud:'all',sw:'all'};
+var now=new Date();
+if(now.getFullYear()===2026&&now.getMonth()===8){var f=DAYS.filter(function(d){return +d[2]===now.getDate()})[0];if(f)st.day=f[0]}
+function ok(e,skipDay){
+  if(!skipDay&&e[0]!==st.day)return false;
+  if(st.aud!=='all'&&e[6].indexOf(st.aud)<0)return false;
+  if(st.sw==='X')return /[NT]/.test(e[5]);
+  if(st.sw!=='all'&&e[5].indexOf(st.sw)<0)return false;
+  return true;
+}
+function pill(k){
+  var s=SW[k];
+  if(!s[1])return '<span class="sw un">'+s[0]+'</span>';
+  return '<span class="sw" style="--c:'+s[1]+'"><i>'+s[0][0]+'</i>'+s[0]+'</span>';
+}
+function time(t){
+  var p=t.split('|');
+  if(p.length<2)return '<div class="time free"><b>'+t+'</b></div>';
+  var a=p[0].split(' ');
+  return '<div class="time"><b>'+a[0]+'<em>'+a[1]+'</em></b><span>until '+p[1]+'</span></div>';
+}
+function row(e){
+  var keys=e[5].replace('/','').split(''),or=e[5].indexOf('/')>0;
+  var who=keys.map(pill).join(or?' <span class="or">or</span> ':'');
+  var tags=(e[6].indexOf('A')>=0?'<span class="tag a">Adults</span>':'')+(e[6].indexOf('K')>=0?'<span class="tag k">Kids</span>':'');
+  return '<li class="row '+e[6]+'">'+time(e[2])+
+    '<div><h3>'+e[3]+'</h3>'+(e[4]?'<p class="loc">'+PIN+e[4]+'</p>':'<p class="loc none">Location not listed</p>')+tags+(e[7]?'<p class="note">'+e[7]+'</p>':'')+'</div>'+
+    '<div class="who">'+who+'</div></li>';
+}
+function render(){
+  document.getElementById('days').innerHTML=DAYS.map(function(d){
+    var n=D.filter(function(e){return e[0]===d[0]&&ok(e,true)}).length;
+    return '<button class="day" data-day="'+d[0]+'" aria-pressed="'+(st.day===d[0])+'">'+d[0]+' '+d[2]+'<small>'+n+(n===1?' session':' sessions')+'</small></button>';
+  }).join('');
+  document.getElementById('aud').innerHTML=[['all','Everyone'],['A','Adults'],['K','Kids']].map(function(a){
+    return '<button data-aud="'+a[0]+'" aria-pressed="'+(st.aud===a[0])+'">'+a[1]+'</button>';
+  }).join('');
+  var chips=[['all','All swamis']].concat(['M','V','A','S','U'].map(function(k){return [k,SW[k][0],SW[k][1]]})).concat([['X','Not yet named']]);
+  document.getElementById('chips').innerHTML=chips.map(function(c){
+    return '<button class="chip" data-sw="'+c[0]+'" aria-pressed="'+(st.sw===c[0])+'">'+(c[2]?'<i style="--c:'+c[2]+'"></i>':'')+c[1]+'</button>';
+  }).join('');
+  var rows=D.filter(function(e){return ok(e)}).sort(function(a,b){return a[1]-b[1]});
+  var dn=DAYS.filter(function(d){return d[0]===st.day})[0];
+  document.getElementById('sub').textContent=dn[1]+' '+dn[2]+' · '+rows.length+(rows.length===1?' session needs':' sessions need')+' a swami';
+  document.getElementById('list').innerHTML=rows.length?rows.map(row).join(''):
+    '<li class="empty">No swami sessions match these filters on '+dn[1]+'.<br><button data-reset="1">Show everything</button></li>';
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target.closest('button');if(!b)return;
+  if(b.dataset.day)st.day=b.dataset.day;
+  if(b.dataset.aud)st.aud=b.dataset.aud;
+  if(b.dataset.sw)st.sw=b.dataset.sw;
+  if(b.dataset.reset){st.aud='all';st.sw='all'}
+  render();
+});
+render();
+</script>
+</body>
+</html>
